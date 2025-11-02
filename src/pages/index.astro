@@ -1,15 +1,150 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const email = "hemantpacha@gmail.com";
 ---
 <Layout title="Hemant Pacha — Portfolio">
-  <main style="max-width: 900px; margin: 60px auto; padding: 0 20px; font-family: system-ui;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Hi, I’m Hemant 👋</h1>
-    <p style="font-size: 1.2rem; line-height: 1.6;">
-      I’m a Computer Science student at the University of Texas at Dallas, passionate about building web apps and learning AI/ML.
-    </p>
-    <p style="margin-top: 20px;">
-      <a href="/projects" style="color: #7C3AED; text-decoration: none; font-weight: 600;">View My Projects →</a>
-    </p>
-  </main>
-</Layout>
+  <!-- Container only; assume Layout provides <main> to avoid double-main issues -->
+  <div class="container">
+    <!-- Terminal window -->
+    <div class="terminal-window" aria-label="Intro terminal animation">
+      <div class="terminal-header">
+        <div class="terminal-buttons" aria-hidden="true">
+          <span class="btn btn-close"></span>
+          <span class="btn btn-min"></span>
+          <span class="btn btn-max"></span>
+        </div>
+        <span class="terminal-title" aria-hidden="true">hemant@portfolio:~$</span>
+      </div>
+      <div class="terminal-body" role="log" aria-live="polite">
+        <div class="terminal-line">
+          <span class="prompt">root@portfolio:~#</span>
+          <span class="cursor" aria-hidden="true">█</span>
+        </div>
+        <div class="terminal-line delay-1">
+          <span class="matrix-text">$ whoami</span>
+        </div>
+        <div class="terminal-line delay-2">
+          <span class="matrix-text">hemant_pacha</span>
+        </div>
+        <div class="terminal-line delay-3">
+          <span class="matrix-text">$ cat profile.txt</span>
+        </div>
+        <div class="terminal-line delay-4">
+          <span class="matrix-text">[CS_STUDENT] [WEB_DEV] [AI_ML]</span>
+        </div>
+      </div>
+    </div>
 
+    <!-- Hero section -->
+    <section class="hero" aria-labelledby="home-title">
+      <div class="hero-content">
+        <h1 id="home-title" class="title">HEMANT_PACHA</h1>
+        <p class="lead"><span class="code-text">CS @ UTD_</span> | <span class="code-text">WEB_DEV</span> | <span class="code-text">AI/ML_EXPLORER</span></p>
+        <div class="cta-group">
+          <a class="cta primary" href="/projects" aria-label="View projects">LOAD_PROJECTS →</a>
+          <a class="cta secondary" href={`mailto:${email}`} aria-label="Email Hemant">ESTABLISH_CONTACT</a>
+          <a class="cta secondary" href="/Hemant_Pacha_Resume.pdf" aria-label="View resume">VIEW_RESUME</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / social -->
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="contact-links">
+        <div id="contact-title" class="contact-header">[NETWORK_ACCESS]</div>
+        <a href={`mailto:${email}`} class="contact-link" aria-label="Email">
+          <span class="icon">&gt;_</span>
+          <span>{email}</span>
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/hemantpacha" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub – hemantpacha">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>GITHUB</span>
+          </a>
+          <a href="https://linkedin.com/in/hemantpacha" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn – Hemant Pacha">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span>LINKEDIN</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    :root{
+      --bg: rgba(13,13,13,0.95);
+      --panel: #0e0e0e;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --text-dim: #b7b7b7;
+      --accent: #7ee787;
+      --shadow: 0 8px 32px rgba(0,0,0,.6);
+    }
+
+    .container{ width:100%; max-width:900px; margin:0 auto; padding:40px 20px; }
+
+    /* Terminal window */
+    .terminal-window{ background:var(--bg); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:30px; box-shadow:var(--shadow); }
+    .terminal-header{ background:#161616; padding:10px 15px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
+    .terminal-buttons{ display:flex; gap:8px; }
+    .btn{ width:12px; height:12px; border-radius:50%; display:inline-block; }
+    .btn-close{ background:#ff5f56; } .btn-min{ background:#ffbd2e; } .btn-max{ background:#27c93f; }
+    .terminal-title{ color:var(--text-dim); font-size:.9rem; font-family:'Courier New', monospace; letter-spacing:.5px; opacity:.85; }
+    .terminal-body{ padding:20px; font-family:'Courier New', monospace; font-size:.95rem; line-height:1.8; color:var(--text); }
+
+    .terminal-line{ margin-bottom:8px; opacity:0; animation:typeOut .5s ease-out forwards; }
+    .delay-1{ animation-delay:.8s; } .delay-2{ animation-delay:1.8s; } .delay-3{ animation-delay:2.8s; } .delay-4{ animation-delay:3.5s; }
+    @keyframes typeOut { to { opacity:1; } }
+
+    .prompt{ color:var(--text-dim); font-weight:600; }
+    .cursor{ color:var(--text-dim); animation:blink 1s infinite; }
+    @keyframes blink{ 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
+    .matrix-text{ color:var(--text-dim); }
+
+    /* Hero */
+    .hero{ background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:50px 40px; margin-bottom:30px; text-align:center; box-shadow:var(--shadow); backdrop-filter: blur(10px); }
+    .hero-content{ animation:fadeIn .6s ease-out .2s both; }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .title{ font-size:clamp(2rem,5vw,3rem); font-weight:700; margin:0 0 20px 0; letter-spacing:2px; line-height:1.2; color:var(--text); opacity:.95; }
+    .code-text{ color:var(--text); font-family:'Courier New', monospace; letter-spacing:1px; }
+    .lead{ font-size:1.1rem; line-height:2; color:var(--text-dim); margin:0 0 32px 0; font-family:'Courier New', monospace; }
+
+    .cta-group{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .cta{ display:inline-flex; align-items:center; padding:14px 28px; font-size:.95rem; font-weight:700; text-decoration:none; border-radius:10px; transition:transform .2s ease, border-color .2s ease, background .2s ease; cursor:pointer; font-family:'Courier New', monospace; letter-spacing:.6px; text-transform:uppercase; border:1px solid var(--border); color:var(--text); background:transparent; box-shadow:0 0 20px rgba(0,0,0,.35); }
+    .cta.primary{ background:transparent; }
+    .cta:hover{ transform: translateY(-2px); border-color: var(--accent); }
+
+    /* Contact */
+    .contact{ background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:40px; text-align:center; box-shadow:var(--shadow); }
+    .contact-header{ font-size:.9rem; color:var(--text-dim); font-family:'Courier New', monospace; letter-spacing:2px; margin-bottom:24px; text-transform:uppercase; }
+    .contact-links{ display:flex; flex-direction:column; gap:24px; align-items:center; }
+    .contact-link{ display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none; font-weight:700; font-size:1rem; transition:transform .2s ease, opacity .2s ease; font-family:'Courier New', monospace; }
+    .contact-link:hover{ transform:translateX(5px); opacity:.9; }
+    .icon{ color:var(--text-dim); }
+    .social-links{ display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+    .social-link{ display:flex; align-items:center; gap:8px; color:var(--text); text-decoration:none; font-weight:700; padding:10px 16px; border-radius:8px; transition:transform .2s ease, background .2s ease, border-color .2s ease; border:1px solid transparent; font-family:'Courier New', monospace; font-size:.9rem; letter-spacing:1px; }
+    .social-link:hover{ background: rgba(255,255,255,0.06); border-color: var(--border); transform: translateY(-2px); }
+    .social-link svg{ width:24px; height:24px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero{ padding:40px 24px; }
+      .title{ font-size:2rem; }
+      .lead{ font-size:1rem; }
+      .cta-group{ flex-direction:column; width:100%; }
+      .cta{ width:100%; justify-content:center; }
+      .contact{ padding:30px 20px; }
+      .social-links{ flex-direction:column; width:100%; }
+      .social-link{ justify-content:center; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</Layout>

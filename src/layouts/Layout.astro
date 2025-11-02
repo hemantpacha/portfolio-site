@@ -24,7 +24,98 @@ const {
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" />
   </head>
-  <body style="margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto">
+  <body>
+    <div class="circuit-background"></div>
     <slot />
   </body>
+
+  <style is:global>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: #0d0d0d;
+      min-height: 100vh;
+      color: #1a1a1a;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .circuit-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .circuit-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(26, 26, 26, 0.05) 1px, rgba(26, 26, 26, 0.05) 2px),
+        repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(26, 26, 26, 0.05) 1px, rgba(26, 26, 26, 0.05) 2px);
+      background-size: 60px 60px;
+      animation: grid-fade 10s ease-in-out infinite;
+    }
+
+    .circuit-background::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 30% 40%, rgba(26, 26, 26, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(26, 26, 26, 0.02) 0%, transparent 50%);
+      animation: breathe 12s ease-in-out infinite;
+    }
+
+    @keyframes grid-fade {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus styles for accessibility */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #1a1a1a;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  </style>
 </html>
