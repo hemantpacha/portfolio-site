@@ -1,11 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
-
-<Layout>
-	<Welcome />
+<Layout title="Hemant Pacha — Portfolio">
+  <main style="max-width: 900px; margin: 60px auto; padding: 0 20px; font-family: system-ui;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Hi, I’m Hemant 👋</h1>
+    <p style="font-size: 1.2rem; line-height: 1.6;">
+      I’m a Computer Science student at the University of Texas at Dallas, passionate about building web apps and learning AI/ML.
+    </p>
+    <p style="margin-top: 20px;">
+      <a href="/projects" style="color: #7C3AED; text-decoration: none; font-weight: 600;">View My Projects →</a>
+    </p>
+  </main>
 </Layout>
+

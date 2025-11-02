@@ -1,22 +1,30 @@
-<!doctype html>
+---
+const {
+  title = "Hemant Pacha — Portfolio",
+  description = "CS @ UTD. Selected projects in C++/Java/AI/Web. Seeking SWE/ML internships.",
+  ogImage = "/og-image.png",
+  url = "https://portfolio-site.vercel.app", // update later if you buy a domain
+} = Astro.props;
+---
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / social -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body style="margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto">
+    <slot />
+  </body>
+</html>
