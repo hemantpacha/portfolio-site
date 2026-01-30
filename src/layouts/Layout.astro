@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro';
 const {
   title = "Hemant Pacha — Portfolio",
   description = "CS @ UTD. Selected projects in C++/Java/AI/Web. Seeking SWE/ML internships.",
@@ -27,6 +28,7 @@ const {
   <body>
     <div class="circuit-background"></div>
     <slot />
+    <Analytics />
   </body>
 
   <style is:global>
